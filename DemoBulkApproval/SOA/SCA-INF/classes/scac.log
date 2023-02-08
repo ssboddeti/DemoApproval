@@ -1,0 +1,22 @@
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option PermSize=32m; support was removed in 8.0
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+2022-12-16 06:48:08.971/3.758 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Loaded operational configuration from "jar:file:/C:/Users/sboddeti/AppData/Local/FMW/coherence/lib/coherence.jar!/tangosol-coherence.xml"
+2022-12-16 06:48:09.064/3.852 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Loaded operational overrides from "jar:file:/C:/Users/sboddeti/AppData/Local/FMW/coherence/lib/coherence.jar!/tangosol-coherence-override-dev.xml"
+2022-12-16 06:48:09.070/3.858 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "/tangosol-coherence-override.xml" is not specified
+2022-12-16 06:48:09.078/3.866 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "cache-factory-config.xml" is not specified
+2022-12-16 06:48:09.082/3.870 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "cache-factory-builder-config.xml" is not specified
+2022-12-16 06:48:09.088/3.876 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "/custom-mbeans.xml" is not specified
+
+Oracle Coherence Version 12.2.1.4.0 Build 74888
+ Grid Edition: Development mode
+Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
+
+2022-12-16 06:48:11.054/5.841 Oracle Coherence GE 12.2.1.4.0 <Info> (thread=main, member=n/a): The cluster name has not been configured, a value of "sboddeti's cluster" has been automatically generated
+2022-12-16 06:48:12.158/6.946 Oracle Coherence GE 12.2.1.4.0 <Info> (thread=main, member=n/a): Created cache factory com.tangosol.net.ExtensibleConfigurableCacheFactory
+Dec 16, 2022 6:48:13 AM oracle.soa.scac.ValidateComposite loadWSDLs
+WARNING: Validating WSDLs from WSDLManager....  with option UseSoaInfraMds:false
+Dec 16, 2022 6:48:13 AM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
+INFO: XMLSchema incremental build enabled.

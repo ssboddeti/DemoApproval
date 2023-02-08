@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BulkAppModule"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  ComponentClass="ng.com.mtn.oim.BulkAppModuleImpl"
+  DefClass="ng.com.mtn.oim.BulkAppModuleDefImpl"
+  ClearCacheOnRollback="true">
+  <DesignTime>
+    <Attr Name="_isDefCodegen" Value="true"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="ng.com.mtn.oim.BulkAppModule_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="ng.com.mtn.oim.ADFBatchApprovalModelBundle"/>
+  </ResourceBundle>
+</AppModule>
