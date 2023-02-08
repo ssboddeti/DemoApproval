@@ -1,0 +1,33 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/CreateManagerApprovalTask.task</file>
+      <name>HumanTasks/CreateManagerApprovalTask.task</name>
+      <fix/>
+      <msg>Task owner not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/CreateManagerApprovalTask.task</file>
+      <name>HumanTasks/CreateManagerApprovalTask.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>ManagerApprovalBPEL.componentType</file>
+      <name>ManagerApprovalBPEL.componentType</name>
+      <fix/>
+      <msg>property "partnerLink.managerapprovalbpel_client.batchid" may not be understood by BPEL component ManagerApprovalBPEL - it will likely be ignored.</msg>
+   </Fault>
+</Faults>

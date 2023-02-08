@@ -1,0 +1,173 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer 
+  
+  Created: Mon Dec 12 16:11:12 PST 2022
+  Author:  sboddeti
+  Type: BPEL 2.0 Process
+  Purpose: Asynchronous BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="ManagerApprovalBPEL"
+         targetNamespace="http://xmlns.oracle.com/DemoManagerApproval/DemoBulkApproval/ManagerApprovalBPEL"
+         xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:client="http://xmlns.oracle.com/DemoManagerApproval/DemoBulkApproval/ManagerApprovalBPEL"
+         xmlns:ora="http://schemas.oracle.com/xpath/extension"
+         xmlns:ui="http://xmlns.oracle.com/soa/designer"
+         xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+         xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:task="http://xmlns.oracle.com/bpel/workflow/task"
+         xmlns:taskservice="http://xmlns.oracle.com/bpel/workflow/taskService"
+         xmlns:wfcommon="http://xmlns.oracle.com/bpel/workflow/common"
+         xmlns:wf="http://schemas.oracle.com/bpel/extensions/workflow"
+         xmlns:ns1="http://xmlns.oracle.com/ias/pcbpel/NotificationService"
+         xmlns:ns3="http://xmlns.oracle.com/bpel/workflow/routingSlip"
+         xmlns:ns2="http://xmlns.oracle.com/bpel/workflow/TaskEvidenceService"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:ess="http://xmlns.oracle.com/scheduler" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap"
+         xmlns:ns4="http://xmlns.oracle.com/pcbpel/adapter/db/DemoManagerApproval/DemoBulkApproval/TestOIM_OIM"
+         xmlns:ns5="http://xmlns.oracle.com/pcbpel/adapter/db/DemoManagerApproval/DemoBulkApproval/updateHR_EMP"
+         xmlns:ns7="http://xmlns.oracle.com/pcbpel/adapter/db/updateHR_EMP"
+         xmlns:ns6="http://xmlns.oracle.com/pcbpel/adapter/db/top/updateHR_EMP"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <import ui:processWSDL="true" namespace="http://xmlns.oracle.com/DemoManagerApproval/DemoBulkApproval/ManagerApprovalBPEL" location="../WSDLs/ManagerApprovalBPEL.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <!-- 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        PARTNERLINKS                                                      
+        List of services participating in this BPEL process               
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    --> 
+    <partnerLinks>
+        <!-- 
+      The 'client' role represents the requester of this service. It is 
+      used for callback. The location and correlation information associated
+      with the client role are automatically set using WS-Addressing.
+    -->
+        <partnerLink name="managerapprovalbpel_client" partnerLinkType="client:ManagerApprovalBPEL" myRole="ManagerApprovalBPELProvider" partnerRole="ManagerApprovalBPELRequester"/>
+        <partnerLink name="CreateManagerApprovalTask.TaskService_1" partnerLinkType="taskservice:TaskService"
+                     partnerRole="TaskService" myRole="TaskServiceCallbackListener"/>
+        <partnerLink name="updateHR_EMP" partnerLinkType="ns5:updateHR_EMP_plt" partnerRole="updateHR_EMP_role"/>
+    </partnerLinks>
+
+    <!-- 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        VARIABLES                                                        
+        List of messages and XML documents used within this BPEL process 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    -->
+    <variables>
+        <!-- Reference to the message passed as input during initiation -->
+        <variable name="inputVariable" messageType="client:ManagerApprovalBPELRequestMessage"/>
+
+        <!-- Reference to the message that will be sent back to the requester during callback -->
+        <variable name="outputVariable" messageType="client:ManagerApprovalBPELResponseMessage"/>
+        <variable name="CreateManagerApprovalTask1_globalVariable" messageType="taskservice:taskMessage"/>
+        <variable name="CreateManagerApprovalTask2_globalVariable" messageType="taskservice:taskMessage"/>
+        <variable name="invokeApproval_updateHR_EMP_InputVariable" messageType="ns5:updateHR_EMPInput_msg"/>
+    </variables>
+
+    <!-- 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+       ORCHESTRATION LOGIC                                               
+       Set of activities coordinating the flow of messages across the    
+       services integrated within this business process                  
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    -->
+    <sequence name="main">
+        <!-- Receive input from requestor. (Note: This maps to operation defined in ManagerApprovalBPEL.wsdl) -->
+        <receive name="receiveInput" partnerLink="managerapprovalbpel_client" portType="client:ManagerApprovalBPEL" operation="process" variable="inputVariable" createInstance="yes"/>
+        <scope name="CreateManagerApprovalTask2"
+               xmlns:wf="http://schemas.oracle.com/bpel/extensions/workflow"
+               wf:key="CreateManagerApprovalTask1_globalVariable">
+            <bpelx:annotation>
+                <bpelx:pattern patternName="bpelx:workflow"></bpelx:pattern>
+            </bpelx:annotation>
+            <variables>
+                <variable name="initiateTaskInput" messageType="taskservice:initiateTaskMessage"/>
+                <variable name="initiateTaskResponseMessage" messageType="taskservice:initiateTaskResponseMessage"/>
+                <variable name="l_batchid" type="xsd:string"/>
+            </variables>
+            <sequence>
+                <assign name="CreateManagerApprovalTask2_AssignTaskAttributes">
+                    <copy>
+                        <from>$inputVariable.payload/client:input</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$l_batchid</to>
+                    </copy>
+                    <copy>
+                        <from>number(3)</from>
+                        <to>$initiateTaskInput.payload/task:task/task:priority</to>
+                    </copy>
+                    <copy>
+                        <from><literal><payload xmlns="http://xmlns.oracle.com/bpel/workflow/task">
+ <BatchID xmlns="http://xmlns.oracle.com/bpel/workflow/task"/>
+</payload></literal></from>
+                        <to>$initiateTaskInput.payload/task:task/task:payload</to>
+                    </copy>
+                    <copy>
+                        <from>concat('Approval Task for Users Onboarding - Batch ID  : ', bpws:getVariableData('l_batchid'))</from>
+                        <to>$initiateTaskInput.payload/task:task/task:title</to>
+                    </copy>
+                    <copy>
+                        <from>$initiateTaskInput.payload/task:task/task:creator</from>
+                        <to>$initiateTaskInput.payload/task:task/task:creator</to>
+                    </copy>
+                </assign>
+                <invoke name="initiateTask_CreateManagerApprovalTask2"
+                        partnerLink="CreateManagerApprovalTask.TaskService_1" operation="initiateTask"
+                        portType="taskservice:TaskService" inputVariable="initiateTaskInput"
+                        outputVariable="initiateTaskResponseMessage" bpelx:invokeAsDetail="no"/>
+                <receive name="receiveCompletedTask_CreateManagerApprovalTask2"
+                         partnerLink="CreateManagerApprovalTask.TaskService_1"
+                         portType="taskservice:TaskServiceCallback" operation="onTaskCompleted"
+                         variable="CreateManagerApprovalTask1_globalVariable" createInstance="no"/>
+            </sequence>
+        </scope>
+        <if name="taskIf">
+            <documentation>
+                <![CDATA[Task outcome is APPROVE]]>
+            </documentation>
+            <condition>$CreateManagerApprovalTask1_globalVariable.payload/task:systemAttributes/task:outcome = 'APPROVE'</condition>
+            <sequence>
+                <assign name="Assign1">
+                    <copy>
+                        <from>$inputVariable.payload/client:input</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$invokeApproval_updateHR_EMP_InputVariable.updateHR_EMPInput_msg/ns7:BATCHID</to>
+                    </copy>
+                    <copy>
+                        <from>xp20:current-dateTime()</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$invokeApproval_updateHR_EMP_InputVariable.updateHR_EMPInput_msg/ns7:LASTUPDATED</to>
+                    </copy>
+                </assign>
+                <invoke name="invk_DB_Update" partnerLink="updateHR_EMP" portType="ns5:updateHR_EMP_ptt"
+                        operation="updateHR_EMP" inputVariable="invokeApproval_updateHR_EMP_InputVariable"
+                        bpelx:invokeAsDetail="no"/>
+            </sequence>
+            <elseif>
+                <documentation>
+                    <![CDATA[Task outcome is REJECT]]>
+                </documentation>
+                <condition>$CreateManagerApprovalTask1_globalVariable.payload/task:systemAttributes/task:outcome = 'REJECT'</condition>
+                <exit name="Exit3"/>
+            </elseif>
+            <else>
+                <sequence>
+                    <exit name="Exit2"/>
+                </sequence>
+            </else>
+        </if>
+        <!-- 
+          Asynchronous callback to the requester. (Note: the callback location and correlation id is transparently handled using WS-addressing.)
+        -->
+        <invoke name="callbackClient" partnerLink="managerapprovalbpel_client" portType="client:ManagerApprovalBPELCallback" operation="processResponse" inputVariable="outputVariable"/>
+    </sequence>
+</process>

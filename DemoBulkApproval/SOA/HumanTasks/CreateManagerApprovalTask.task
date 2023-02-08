@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<taskDefinition targetNamespace="http://xmlns.oracle.com/DemoManagerApproval/DemoBulkApproval/CreateManagerApprovalTask" xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20" xmlns:ora="http://schemas.oracle.com/xpath/extension" xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc" xmlns:task="http://xmlns.oracle.com/bpel/workflow/task" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://xmlns.oracle.com/bpel/workflow/taskDefinition"
+                xmlns:mhdr="http://www.oracle.com/XSL/Transform/java/oracle.tip.mediator.service.common.functions.MediatorExtnFunction"
+                xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions" xmlns:ess="http://xmlns.oracle.com/scheduler"
+                xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+                xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+                xmlns:socket="http://www.oracle.com/XSL/Transform/java/oracle.tip.adapter.socket.ProtocolTranslator"
+                xmlns:ns0="http://xmlns.oracle.com/bpel/workflow/common"
+                xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+                xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+                xmlns:oraxsl="http://www.oracle.com/XSL/Transform/java"
+                xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+                xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+                xmlns:med="http://schemas.oracle.com/mediator/xpath" xmlns:fn="http://www.w3.org/2005/xpath-functions"
+                xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+                xmlns:evidence="http://xmlns.oracle.com/bpel/workflow/TaskEvidenceService"
+                xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap">
+   <name>CreateManagerApprovalTask</name>
+   <id>${domain_id}_${process_id}_${process_revision}_CreateManagerApprovalTask</id>
+   <title type="XPATH"><value>Approve for the /task:task/task:payload/task:BatchID</value></title>
+   <priority>3</priority>
+   <hideCreator>false</hideCreator>
+   <process processId="" processVersion=""/>
+   <routingSlip xmlns="http://xmlns.oracle.com/bpel/workflow/routingSlip" routingType="TEMPLATE">
+      <globalConfiguration>
+         <sharePayloadConfiguration>
+            <type>USE_SYSTEM_WIDE_GLOBAL_CONFIGURATION</type>
+         </sharePayloadConfiguration>
+         <errorOnEmptyAssignee>false</errorOnEmptyAssignee>
+         <excludeSaturdayAndSunday>false</excludeSaturdayAndSunday>
+      </globalConfiguration>
+      <participants isAdhocRoutingSupported="false">
+         <stage name="Stage1" disabled="false">
+            <participant disabled="false" name="Stage1.Participant1">
+               <resource type="STATIC" identityType="user">nonyeo</resource>
+               <dynamicAssignment identityTypeToSelect="user">
+                  <assignmentPattern patternName="LEAST_BUSY" isGlobalPattern="false"/>
+               </dynamicAssignment>
+            </participant>
+         </stage>
+      </participants>
+      <notification includeTaskAttachments="false" actionable="false" secureNotifications="false"
+                    oneNotificationPerUserPerAction="false" hideWorklistUrlInEmail="false">
+         <action name="ASSIGN" recipient="ASSIGNEES">
+            <![CDATA[concat(string('Task '), /task:task/task:title, string(' requires your attention.'))]]>
+         </action>
+         <action name="COMPLETE" recipient="CREATOR">
+            <![CDATA[concat(string('Task '), /task:task/task:title, string(' requires your attention.'))]]>
+         </action>
+         <action name="ERROR" recipient="OWNER">
+            <![CDATA[concat(string('Task '), /task:task/task:title, string(' requires your attention.'))]]>
+         </action>
+         <groupNotificationConfiguration>SEND_INDIVIDUAL_NOTIFICATION</groupNotificationConfiguration>
+         <commentScope>TASK</commentScope>
+      </notification>
+      <reviewer>
+         <resource type="STATIC" identityType="user">ssboddeti</resource>
+      </reviewer>
+   </routingSlip>
+   <workflowConfiguration features="ucm,RSCUSTOMIZATION,RULESOPTIMIZATION" xmlns="http://xmlns.oracle.com/bpel/workflow/configuration"
+                          xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <outcomes>
+         <outcome>APPROVE</outcome>
+         <outcome>REJECT</outcome>
+      </outcomes>
+      <payload externalSchema="false" xmlSchemaDefinition="../Schemas/CreateManagerApprovalTaskPayload.xsd"
+               typedTaskSchemaLocation="../Schemas/CreateManagerApprovalTaskWorkflowTask.xsd">
+         <messageAttribute name="BatchID" attributeType="SIMPLE_TYPE" type="xsd:string" updatable="false"
+                           external="false"/>
+      </payload>
+      <bpelEventListener>false</bpelEventListener>
+      <bpelNoCallbacks>false</bpelNoCallbacks>
+      <showCompleteGraphicalHistory>true</showCompleteGraphicalHistory>
+      <reevalTranslatablesOnUpdate>false</reevalTranslatablesOnUpdate>
+      <preActionMandatoryUserSteps/>
+      <allowInitiatorEditParticipants>false</allowInitiatorEditParticipants>
+      <allowParticipantsEditParticipants>false</allowParticipantsEditParticipants>
+      <globalCreationTask>false</globalCreationTask>
+      <taskFlowFileLocation>file:/C:/Users/sboddeti/Desktop/ACS/MTNN/DemoManagerApproval/ADFBatchApprovalTaskFlow/public_html/WEB-INF/CreateManagerApprovalTask_TaskFlow.xml</taskFlowFileLocation>
+      <workflowConditions/>
+      <taskSequenceTypes>FUTURE</taskSequenceTypes>
+      <taskSequenceTypes>AGGREGATE</taskSequenceTypes>
+   </workflowConfiguration>
+</taskDefinition>

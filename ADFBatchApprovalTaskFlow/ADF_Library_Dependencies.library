@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<library name="ADF Library Dependencies" id="" deployed="true" locked="true" xmlns="http://xmlns.oracle.com/jdeveloper/1013/manifest-libraries">
+  <description/>
+  <classpath>../../../../../AppData/Local/FMW/lib/commonj.jar</classpath>
+  <classpath>../../../../../AppData/Local/FMW/soa/soa/modules/composer/soaComposerTemplates.jar</classpath>
+  <classpath>../../../../../AppData/Local/FMW/soa/soa/modules/jrf/jps-api.jar</classpath>
+  <classpath>../../../../../AppData/Local/FMW/soa/soa/modules/jrf/jps-unsupported-api.jar</classpath>
+  <classpath>../../../../../AppData/Local/FMW/soa/soa/modules/oracle.soa.worklist_11.1.1/common-userprefs.jar</classpath>
+  <classpath>../../../../../AppData/Local/FMW/soa/soa/modules/rulesComponents/adflibGenericDCs.jar</classpath>
+  <classpath>../../../../../AppData/Local/FMW/soa/soa/modules/rulesComponents/adflibRulesSharedDC.jar</classpath>
+  <classpath>../../../../../AppData/Local/FMW/soa/soa/modules/rulesComponents/rulesSharedUtils.jar</classpath>
+</library>
