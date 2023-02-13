@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48"
+                id="HrEmpTaskFlow_HrEmpTaskFlow_ExecuteWithParamsPageDef" Package="adfbatchapprovaltaskflow.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="HREmpVO1" RangeSize="25" DataControl="BulkAppModuleDataControl" id="HREmpVO1Iterator"
+              Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="HREmpVO1Iterator" id="ExecuteWithParams" RequiresUpdateModel="true" Action="executeWithParams">
+      <NamedData NDName="b_BatchID" NDValue="#{pageFlowScope.batchID}" NDType="java.lang.String"/>
+    </action>
+  </bindings>
+</pageDefinition>

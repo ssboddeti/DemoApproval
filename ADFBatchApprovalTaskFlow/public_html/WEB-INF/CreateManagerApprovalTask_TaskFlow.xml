@@ -233,16 +233,6 @@
       <managed-bean-class>oracle.bpel.services.workflow.worklist.adf.CommentBean</managed-bean-class>
       <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
-    <managed-bean id="__57">
-      <managed-bean-name>uiBean</managed-bean-name>
-      <managed-bean-class>ng.mtn.oim.beans.UIManagedBean</managed-bean-class>
-      <managed-bean-scope>pageFlow</managed-bean-scope>
-    </managed-bean>
-    <managed-bean id="__58">
-      <managed-bean-name>uiBean</managed-bean-name>
-      <managed-bean-class>ng.mtn.oim.beans.UIManagedBean</managed-bean-class>
-      <managed-bean-scope>pageFlow</managed-bean-scope>
-    </managed-bean>
     <finalizer>#{invokeActionBean.invokeScript}</finalizer>
     <view id="CreateManagerApprovalTask_TaskDetails_jspx">
       <page>/CreateManagerApprovalTask_TaskDetails.jspx</page>

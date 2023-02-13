@@ -10,5 +10,31 @@
   <DesignTime>
     <Attr Name="_DTExpressionTypeChecking" Value="true"/>
     <Attr Name="_jprName" Value="../../../../../ADFBatchApprovalModel.jpr"/>
+    <Attr Name="_NamedConnection" Value="operationsDB"/>
+    <Attr Name="_appModuleNames0" Value="ng.com.mtn.oim.BulkAppModule"/>
   </DesignTime>
+  <Containee
+    Name="eo"
+    PackageName="ng.com.mtn.oim.eo"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_EO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="oim"
+    PackageName="ng.com.mtn.oim"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="vo"
+    PackageName="ng.com.mtn.oim.vo"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
 </JboProject>

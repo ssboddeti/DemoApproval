@@ -1,20 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.22.48" id="DataBindings"
              SeparateXMLFiles="false" Package="adfbatchapprovaltaskflow" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding" className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
   <pageMap>
     <page path="/CreateManagerApprovalTask_TaskDetails.jspx"
           usageId="adfbatchapprovaltaskflow_CreateManagerApprovalTask_TaskDetailsPageDef"/>
     <page path="/CreateManagerApprovalTask_TaskNotification.jspx"
           usageId="adfbatchapprovaltaskflow_CreateManagerApprovalTask_TaskNotificationPageDef"/>
+    <page path="/WEB-INF/HrEmpTaskFlow.xml#HrEmpTaskFlow@ExecuteWithParams"
+          usageId="adfbatchapprovaltaskflow_HrEmpTaskFlow_HrEmpTaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/frag/HREmpFrag.jsff" usageId="adfbatchapprovaltaskflow_HREmpFragPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="adfbatchapprovaltaskflow_CreateManagerApprovalTask_TaskDetailsPageDef"
           path="adfbatchapprovaltaskflow.pageDefs.CreateManagerApprovalTask_TaskDetailsPageDef"/>
     <page id="adfbatchapprovaltaskflow_CreateManagerApprovalTask_TaskNotificationPageDef"
           path="adfbatchapprovaltaskflow.pageDefs.CreateManagerApprovalTask_TaskNotificationPageDef"/>
+    <page id="adfbatchapprovaltaskflow_HrEmpTaskFlow_HrEmpTaskFlow_ExecuteWithParamsPageDef"
+          path="adfbatchapprovaltaskflow.pageDefs.HrEmpTaskFlow_HrEmpTaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="adfbatchapprovaltaskflow_HREmpFragPageDef" path="frag.HREmpFragPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <dc id="ADFBatchApprovalTaskFlow_CreateManagerApprovalTask"
         path="adfbatchapprovaltaskflow.ADFBatchApprovalTaskFlow_CreateManagerApprovalTask"/>
+    <BC4JDataControl id="BulkAppModuleDataControl" Package="ng.com.mtn.oim"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="BulkAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
   </dataControlUsages>
 </Application>

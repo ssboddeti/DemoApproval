@@ -5,10 +5,10 @@
    <iconize/>
    <partnerlink_locations>
       <partnerlink name="managerapprovalbpel_client" x="0" y="538" side="left"/>
-      <partnerlink name="CreateManagerApprovalTask.TaskService_1" x="1147" y="376" side="right"/>
-      <partnerlink name="updateHR_EMP" x="1147" y="816" side="right"/>
+      <partnerlink name="CreateManagerApprovalTask.TaskService_1" x="851" y="376" side="right"/>
+      <partnerlink name="updateHR_EMP" x="851" y="816" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,150,1379,813" show_swimlanes="true">
+   <graph_layout viewport="0,0,1017,735" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/sequence/scope" type="human task" showhandlers="true"/>

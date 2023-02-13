@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="HREmpFragPageDef" Package="frag">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="HREmpVO1" RangeSize="25" DataControl="BulkAppModuleDataControl" id="HREmpVO1Iterator"/>
+    <searchRegion Binds="HREmpVO1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="HREmpVO1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="HREmpVO1Iterator" id="HREmpVO1">
+      <nodeDefinition DefName="ng.com.mtn.oim.vo.HREmpVO" Name="HREmpVO10">
+        <AttrNames>
+          <Item Value="EmpId"/>
+          <Item Value="Fullname"/>
+          <Item Value="Persontype"/>
+          <Item Value="Assignmentcategory"/>
+          <Item Value="Title"/>
+          <Item Value="Lastname"/>
+          <Item Value="Firstname"/>
+          <Item Value="Knownas"/>
+          <Item Value="Dateofbirth"/>
+          <Item Value="Email"/>
+          <Item Value="Oldempnumnber"/>
+          <Item Value="Nationalidentifier"/>
+          <Item Value="Maritalstatus"/>
+          <Item Value="Middlenames"/>
+          <Item Value="Nationality"/>
+          <Item Value="Previouslastname"/>
+          <Item Value="Disabledflag"/>
+          <Item Value="Gender"/>
+          <Item Value="Organisation"/>
+          <Item Value="Jobname"/>
+          <Item Value="Startdate"/>
+          <Item Value="Enddate"/>
+          <Item Value="Grade"/>
+          <Item Value="Location"/>
+          <Item Value="Supervisorempnumber"/>
+          <Item Value="Supervisorfullname"/>
+          <Item Value="Supervisoroldempnumber"/>
+          <Item Value="Supervisornationalidentifier"/>
+          <Item Value="Mobile"/>
+          <Item Value="Phonenumber"/>
+          <Item Value="Division"/>
+          <Item Value="Department"/>
+          <Item Value="Joblevel"/>
+          <Item Value="Position"/>
+          <Item Value="Otherattrbiute1"/>
+          <Item Value="Otherattrbiute2"/>
+          <Item Value="Otherattrbiute3"/>
+          <Item Value="Otherattrbiute4"/>
+          <Item Value="Otherattrbiute5"/>
+          <Item Value="Hcmnumber"/>
+          <Item Value="Employeenumber"/>
+          <Item Value="Lastupdated"/>
+          <Item Value="Manager"/>
+          <Item Value="Batchid"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

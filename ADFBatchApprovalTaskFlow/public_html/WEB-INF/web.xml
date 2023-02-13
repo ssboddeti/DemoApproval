@@ -242,6 +242,9 @@
   <listener>
     <listener-class>oracle.adf.mbean.share.config.ADFConfigLifeCycleCallBack</listener-class>
   </listener>
+  <listener>
+    <listener-class>oracle.bc4j.mbean.BC4JConfigLifeCycleCallBack</listener-class>
+  </listener>
   <description>sample web.xml file for task flow</description>
   <session-config>
     <session-timeout>35</session-timeout>
@@ -274,4 +277,10 @@
   <security-role>
     <role-name>valid-users</role-name>
   </security-role>
+  <jsp-config>
+    <jsp-property-group>
+      <url-pattern>*.jsff</url-pattern>
+      <is-xml>true</is-xml>
+    </jsp-property-group>
+  </jsp-config>
 </web-app>

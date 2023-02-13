@@ -12,13 +12,13 @@
       <property
          name="activityId">CreateManagerApprovalTask_TaskDetails_jspx</property>
       <property
-         name="x">161.05762</property>
+         name="x">-46.227898</property>
       <property
          name="start">true</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>CreateManagerApprovalTask_TaskDetails_jspx&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">815.9541</property>
+         name="y">658.61536</property>
       <property
          name="page">/CreateManagerApprovalTask_TaskDetails.jspx</property>
       <property
@@ -31,11 +31,11 @@
       <property
          name="activityId">taskReturn</property>
       <property
-         name="x">426.80273</property>
+         name="x">7.6593475</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>taskReturn&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  done&lt;/p></property>
       <property
-         name="y">1029.9541</property>
+         name="y">972.8592</property>
       <property
          name="finish">true</property>
       <property
@@ -46,11 +46,11 @@
       <property
          name="activityId">taskFlowRefresh</property>
       <property
-         name="x">426.80273</property>
+         name="x">475.57587</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>taskFlowRefresh&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  refresh&lt;/p></property>
       <property
-         name="y">653.9541</property>
+         name="y">823.2575</property>
       <property
          name="finish">true</property>
       <property
@@ -61,11 +61,11 @@
       <property
          name="activityId">taskFlowCompleted</property>
       <property
-         name="x">426.80273</property>
+         name="x">528.9212</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>taskFlowCompleted&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  new&lt;/p></property>
       <property
-         name="y">277.9541</property>
+         name="y">629.57697</property>
       <property
          name="finish">true</property>
       <property
@@ -87,11 +87,11 @@
       <property
          name="activityId">nextTaskFlow</property>
       <property
-         name="x">426.80273</property>
+         name="x">318.58755</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>nextTaskFlow&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  next&lt;/p></property>
       <property
-         name="y">841.9541</property>
+         name="y">961.66156</property>
       <property
          name="finish">true</property>
       <property
@@ -124,11 +124,11 @@
       <property
          name="activityId">previousTaskFlow</property>
       <property
-         name="x">426.80273</property>
+         name="x">429.85107</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>previousTaskFlow&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  previous&lt;/p></property>
       <property
-         name="y">465.9541</property>
+         name="y">408.5085</property>
       <property
          name="finish">true</property>
       <property
@@ -168,7 +168,7 @@
       <property
          name="fromsrcid">__37</property>
       <property
-         name="sdm:polyPoints">T50,167.05762,604.4541,426.80273,331.60352,B50</property>
+         name="sdm:polyPoints">R50,204.3748,646.9541,487.9212,629.2264,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -182,7 +182,7 @@
       <property
          name="fromsrcid">__33</property>
       <property
-         name="sdm:polyPoints">R39,203.05762,639.9541,426.80273,519.6035,B50</property>
+         name="sdm:polyPoints">R39,203.05762,639.9541,429.85107,462.15793,B50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -196,7 +196,7 @@
       <property
          name="fromsrcid">__31</property>
       <property
-         name="sdm:polyPoints">R50,204.087,646.9541,385.80273,653.6035,L50</property>
+         name="sdm:polyPoints">R61,203.05762,653.9541,434.57587,822.9069,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -210,7 +210,7 @@
       <property
          name="fromsrcid">__29</property>
       <property
-         name="sdm:polyPoints">B50,167.05762,689.4541,426.80273,975.6035,T50</property>
+         name="sdm:polyPoints">B43,163.55762,689.4541,7.6593475,918.5086,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -224,6 +224,6 @@
       <property
          name="fromsrcid">__35</property>
       <property
-         name="sdm:polyPoints">R61,203.05762,653.9541,426.80273,787.6035,T50</property>
+         name="sdm:polyPoints">B57,170.55762,689.4541,318.58755,907.311,T50</property>
    </ControlFlowCase>
 </SDM>

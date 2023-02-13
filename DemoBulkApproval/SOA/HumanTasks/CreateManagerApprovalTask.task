@@ -39,8 +39,7 @@
             </participant>
          </stage>
       </participants>
-      <notification includeTaskAttachments="false" actionable="false" secureNotifications="false"
-                    oneNotificationPerUserPerAction="false" hideWorklistUrlInEmail="false">
+      <notification includeTaskAttachments="false" actionable="false" secureNotifications="false" oneNotificationPerUserPerAction="false" hideWorklistUrlInEmail="false" hideWarnings="false">
          <action name="ASSIGN" recipient="ASSIGNEES">
             <![CDATA[concat(string('Task '), /task:task/task:title, string(' requires your attention.'))]]>
          </action>
@@ -63,10 +62,8 @@
          <outcome>APPROVE</outcome>
          <outcome>REJECT</outcome>
       </outcomes>
-      <payload externalSchema="false" xmlSchemaDefinition="../Schemas/CreateManagerApprovalTaskPayload.xsd"
-               typedTaskSchemaLocation="../Schemas/CreateManagerApprovalTaskWorkflowTask.xsd">
-         <messageAttribute name="BatchID" attributeType="SIMPLE_TYPE" type="xsd:string" updatable="false"
-                           external="false"/>
+      <payload externalSchema="false" xmlSchemaDefinition="../Schemas/CreateManagerApprovalTaskPayload.xsd" typedTaskSchemaLocation="../Schemas/CreateManagerApprovalTaskWorkflowTask.xsd">
+         <messageAttribute name="BatchID" attributeType="SIMPLE_TYPE" type="xsd:string" updatable="true" external="false"/>
       </payload>
       <bpelEventListener>false</bpelEventListener>
       <bpelNoCallbacks>false</bpelNoCallbacks>
@@ -77,6 +74,7 @@
       <allowParticipantsEditParticipants>false</allowParticipantsEditParticipants>
       <globalCreationTask>false</globalCreationTask>
       <taskFlowFileLocation>file:/C:/Users/sboddeti/Desktop/ACS/MTNN/DemoManagerApproval/ADFBatchApprovalTaskFlow/public_html/WEB-INF/CreateManagerApprovalTask_TaskFlow.xml</taskFlowFileLocation>
+      <enableAutoClaim>false</enableAutoClaim>
       <workflowConditions/>
       <taskSequenceTypes>FUTURE</taskSequenceTypes>
       <taskSequenceTypes>AGGREGATE</taskSequenceTypes>

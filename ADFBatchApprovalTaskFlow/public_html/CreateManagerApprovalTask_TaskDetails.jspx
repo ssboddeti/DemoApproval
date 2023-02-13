@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <c:set var="adfbatchapprovaltaskflowBundle" value="#{adfBundle['adfbatchapprovaltaskflow.ADFBatchApprovalTaskFlowBundle']}"/>
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <f:view xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:trh="http://myfaces.apache.org/trinidad/html"
             xmlns:wf="http://xmlns.oracle.com/bpel/workflow/workflow-taglib.tld"
@@ -226,7 +227,7 @@
                                     <af:inputText id="priority" value="#{bindings.priority.inputValue}"
                                                   label="#{resources.PRIORITY}"
                                                   required="#{bindings.priority.mandatory}" columns="3"
-                                                  validator="#{actionAvailable.validatePriorityValue}"/>
+                                                  validator="#{actionAvailable.validatePriorityValue}" readOnly="true"/>
                                     <af:panelLabelAndMessage id="state" label="#{resources.STATE}">
                                         <af:outputText value="#{resources[bindings.state.inputValue]}" id="ot5"/>
                                     </af:panelLabelAndMessage>
@@ -243,20 +244,13 @@
                         </trh:rowLayout>
                     </trh:tableLayout-->
                             </af:showDetailHeader>
-                            <af:showDetailHeader size="2" id="apCntHd" text="#{resources.CONTENTS}"
-                                                 disclosed="#{actionAvailable.discloseContents}">
+                            <af:showDetailHeader size="2" id="apCntHd" text="#{adfbatchapprovaltaskflowBundle.BATCH_USER_INFORMATION}" disclosed="false">
                                 <af:panelGroupLayout id="plPnl76" layout="vertical" shortDesc="#{resources.CONTENTS}">
-                                    <af:panelFormLayout id="pfl6">
-                                        <af:inputText value="#{bindings.BatchID.inputValue}"
-                                                      label="#{bindings.BatchID.hints.label}"
-                                                      required="#{bindings.BatchID.hints.mandatory}"
-                                                      columns="#{bindings.BatchID.hints.displayWidth}"
-                                                      maximumLength="#{bindings.BatchID.hints.precision}"
-                                                      shortDesc="#{bindings.BatchID.hints.tooltip}" id="it1">
-                                            <f:validator binding="#{bindings.BatchID.validator}"/>
-                                        </af:inputText>
-                                    </af:panelFormLayout>
+                                    <af:panelFormLayout id="pfl6"/>
                                 </af:panelGroupLayout>
+                                <f:facet name="context">
+                                    <af:outputFormatted value="#{bindings.BatchID.inputValue}" shortDesc="#{bindings.BatchID.hints.tooltip}" id="it1"/>
+                                </f:facet>
                             </af:showDetailHeader>
                             <af:switcher facetName="#{actionAvailable.showHistory}" id="rcms1">
                                 <f:facet name="true">

@@ -105,13 +105,13 @@
                     </copy>
                     <copy>
                         <from>number(3)</from>
-                        <to>$initiateTaskInput.payload/task:task/task:priority</to>
+                        <to variable="initiateTaskInput" part="payload"><query>task:task/task:priority</query></to>
                     </copy>
                     <copy>
                         <from><literal><payload xmlns="http://xmlns.oracle.com/bpel/workflow/task">
  <BatchID xmlns="http://xmlns.oracle.com/bpel/workflow/task"/>
 </payload></literal></from>
-                        <to>$initiateTaskInput.payload/task:task/task:payload</to>
+                        <to variable="initiateTaskInput" part="payload"><query>task:task/task:payload</query></to>
                     </copy>
                     <copy>
                         <from>concat('Approval Task for Users Onboarding - Batch ID  : ', bpws:getVariableData('l_batchid'))</from>
@@ -119,7 +119,15 @@
                     </copy>
                     <copy>
                         <from>$initiateTaskInput.payload/task:task/task:creator</from>
-                        <to>$initiateTaskInput.payload/task:task/task:creator</to>
+                        <to variable="initiateTaskInput" part="payload"><query>task:task/task:creator</query></to>
+                    </copy>
+                    <copy>
+                        <from variable="inputVariable" part="payload"><query>client:input</query></from>
+                        <to variable="initiateTaskInput" part="payload"><query>task:task/task:payload/task:BatchID</query></to>
+                    </copy>
+                    <copy>
+                        <from>concat('Approval Task for Users Onboarding - Batch ID  : ', bpws:getVariableData('l_batchid'))</from>
+                        <to variable="initiateTaskInput" part="payload"><query>task:task/task:title</query></to>
                     </copy>
                 </assign>
                 <invoke name="initiateTask_CreateManagerApprovalTask2"

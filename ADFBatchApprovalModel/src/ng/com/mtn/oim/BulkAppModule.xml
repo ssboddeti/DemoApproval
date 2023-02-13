@@ -19,8 +19,11 @@
         ResId="ng.com.mtn.oim.BulkAppModule_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <ResourceBundle>
-    <PropertiesBundle
-      PropertiesFile="ng.com.mtn.oim.ADFBatchApprovalModelBundle"/>
-  </ResourceBundle>
+  <ViewUsage
+    Name="HREmpVO1"
+    ViewObjectName="ng.com.mtn.oim.vo.HREmpVO">
+    <ViewCriteriaUsage
+      Name="HREmpVOCriteria"
+      FullName="ng.com.mtn.oim.vo.HREmpVO.HREmpVOCriteria"/>
+  </ViewUsage>
 </AppModule>
