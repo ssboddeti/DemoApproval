@@ -51,6 +51,11 @@
                       DataControl="ADFBatchApprovalTaskFlow_CreateManagerApprovalTask"
                       BeanClass="ADFBatchApprovalTaskFlow_CreateManagerApprovalTask.ucmMetadataItemType"
                       id="ucmMetadataItemIterator" StateValidation="false"/>
+    <taskFlow id="HrEmpTaskFlow1" taskFlowId="/WEB-INF/HrEmpTaskFlow.xml#HrEmpTaskFlow" activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding">
+      <parameters>
+        <parameter id="inBatchID" value="#{bindings.BatchID.inputValue}"/>
+      </parameters>
+    </taskFlow>
   </executables>
   <bindings>
     <methodAction id="getTaskDetails" RequiresUpdateModel="true" Action="invokeMethod" MethodName="getTaskDetails"
