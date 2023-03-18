@@ -32,7 +32,7 @@
       <participants isAdhocRoutingSupported="false">
          <stage name="Stage1" disabled="false">
             <participant disabled="false" name="Stage1.Participant1">
-               <resource type="STATIC" identityType="user">nonyeo</resource>
+               <resource type="XPATH" identityType="user">ids:getManager(/task:task/task:payload/task:userLogin)</resource>
                <dynamicAssignment identityTypeToSelect="user">
                   <assignmentPattern patternName="LEAST_BUSY" isGlobalPattern="false"/>
                </dynamicAssignment>
@@ -64,6 +64,7 @@
       </outcomes>
       <payload externalSchema="false" xmlSchemaDefinition="../Schemas/CreateManagerApprovalTaskPayload.xsd" typedTaskSchemaLocation="../Schemas/CreateManagerApprovalTaskWorkflowTask.xsd">
          <messageAttribute name="BatchID" attributeType="SIMPLE_TYPE" type="xsd:string" updatable="true" external="false"/>
+         <messageAttribute name="userLogin" attributeType="SIMPLE_TYPE" type="xsd:string" updatable="false" external="false"/>
       </payload>
       <bpelEventListener>false</bpelEventListener>
       <bpelNoCallbacks>false</bpelNoCallbacks>

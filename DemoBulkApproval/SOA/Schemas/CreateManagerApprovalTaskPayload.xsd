@@ -3,6 +3,7 @@
    <complexType name="CreateManagerApprovalTaskPayloadType">
       <sequence>
          <element name="BatchID" type="xsd:string"/>
+         <element name="userLogin" type="xsd:string"/>
       </sequence>
    </complexType>
 </schema>
