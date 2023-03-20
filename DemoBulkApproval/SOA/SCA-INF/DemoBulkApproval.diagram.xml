@@ -16,11 +16,11 @@
         </dgm:operations>
     </dgm:gService>
     <dgm:gReference name="updateHR_EMP">
-        <dgm:body borderWidth="2" arcRad="20" X="1876" Y="103" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="623" Y="103" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="1866" Y="96" width="156" height="98">
+        <dgm:shadow arcRad="20" X="613" Y="96" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="updateHR_EMP" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/DemoManagerApproval/DemoBulkApproval/updateHR_EMP#wsdl.interface(updateHR_EMP_ptt)"/>
@@ -30,12 +30,12 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gComponent name="ManagerApprovalBPEL">
-        <dgm:body borderWidth="2" arcRad="20" X="644" Y="42" width="130" height="86">
+        <dgm:body borderWidth="2" arcRad="20" X="226" Y="42" width="130" height="86">
             <dgm:borderColor r="69" g="113" b="140"/>
             <dgm:lightBgColor r="166" g="208" b="230"/>
             <dgm:darkBgColor r="99" g="162" b="201"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="634" Y="35" width="150" height="102">
+        <dgm:shadow arcRad="20" X="216" Y="35" width="150" height="102">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="managerapprovalbpel_client" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/DemoManagerApproval/DemoBulkApproval/ManagerApprovalBPEL#wsdl.interface(ManagerApprovalBPEL)" callbackInterface="http://xmlns.oracle.com/DemoManagerApproval/DemoBulkApproval/ManagerApprovalBPEL#wsdl.interface(ManagerApprovalBPELCallback)"/>
@@ -44,33 +44,33 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="CreateManagerApprovalTask">
-        <dgm:body borderWidth="2" arcRad="20" X="1260" Y="26" width="130" height="61">
+        <dgm:body borderWidth="2" arcRad="20" X="424" Y="26" width="130" height="61">
             <dgm:borderColor r="109" g="136" b="65"/>
             <dgm:lightBgColor r="201" g="224" b="155"/>
             <dgm:darkBgColor r="157" g="195" b="93"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="1250" Y="19" width="150" height="77">
+        <dgm:shadow arcRad="20" X="414" Y="19" width="150" height="77">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="TaskService" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/workflow/resources/images/humantask_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gWireLink source="managerapprovalbpel_client_ep" target="ManagerApprovalBPEL/managerapprovalbpel_client" width="2">
-        <dgm:gSegment X1="168" Y1="67" X2="634" Y2="67"/>
+        <dgm:gSegment X1="168" Y1="67" X2="216" Y2="67"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="ManagerApprovalBPEL/CreateManagerApprovalTask.TaskService_1" target="CreateManagerApprovalTask/TaskService" width="2">
-        <dgm:gSegment X1="784" Y1="67" X2="808" Y2="67"/>
-        <dgm:gSegment X1="808" Y1="67" X2="808" Y2="51"/>
-        <dgm:gSegment X1="808" Y1="51" X2="1250" Y2="51"/>
+        <dgm:gSegment X1="366" Y1="67" X2="390" Y2="67"/>
+        <dgm:gSegment X1="390" Y1="67" X2="390" Y2="51"/>
+        <dgm:gSegment X1="390" Y1="51" X2="414" Y2="51"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="ManagerApprovalBPEL/updateHR_EMP" target="updateHR_EMP" width="2">
-        <dgm:gSegment X1="784" Y1="92" X2="808" Y2="92"/>
-        <dgm:gSegment X1="808" Y1="92" X2="808" Y2="113"/>
-        <dgm:gSegment X1="808" Y1="113" X2="1866" Y2="113"/>
+        <dgm:gSegment X1="366" Y1="92" X2="390" Y2="92"/>
+        <dgm:gSegment X1="390" Y1="92" X2="390" Y2="113"/>
+        <dgm:gSegment X1="390" Y1="113" X2="613" Y2="113"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>

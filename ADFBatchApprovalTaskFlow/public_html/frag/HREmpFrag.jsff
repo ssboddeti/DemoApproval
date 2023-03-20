@@ -1,170 +1,174 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:f="http://java.sun.com/jsf/core">
-    <af:panelGroupLayout layout="scroll" id="pgl1">
-        <af:table value="#{bindings.HREmpVO1.collectionModel}" var="row" rows="#{bindings.HREmpVO1.rangeSize}" emptyText="#{bindings.HREmpVO1.viewable ? 'No data to display.' : 'Access Denied.'}" rowBandingInterval="0"
-                  fetchSize="#{bindings.HREmpVO1.rangeSize}" filterModel="#{bindings.HREmpVO1Query.queryDescriptor}" filterVisible="true" queryListener="#{bindings.HREmpVO1Query.processQuery}" varStatus="vs" id="t1">
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.EmpId.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.EmpId.label}" id="c1">
-                <af:outputText value="#{row.EmpId}" shortDesc="#{bindings.HREmpVO1.hints.EmpId.tooltip}" id="ot1">
-                    <af:convertNumber groupingUsed="false" pattern="#{bindings.HREmpVO1.hints.EmpId.format}"/>
-                </af:outputText>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Fullname.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Fullname.label}" id="c2">
-                <af:outputText value="#{row.Fullname}" shortDesc="#{bindings.HREmpVO1.hints.Fullname.tooltip}" id="ot2"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Persontype.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Persontype.label}" id="c3">
-                <af:outputText value="#{row.Persontype}" shortDesc="#{bindings.HREmpVO1.hints.Persontype.tooltip}" id="ot3"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Assignmentcategory.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Assignmentcategory.label}" id="c4">
-                <af:outputText value="#{row.Assignmentcategory}" shortDesc="#{bindings.HREmpVO1.hints.Assignmentcategory.tooltip}" id="ot4"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Title.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Title.label}" id="c5">
-                <af:outputText value="#{row.Title}" shortDesc="#{bindings.HREmpVO1.hints.Title.tooltip}" id="ot5"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Lastname.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Lastname.label}" id="c6">
-                <af:outputText value="#{row.Lastname}" shortDesc="#{bindings.HREmpVO1.hints.Lastname.tooltip}" id="ot6"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Firstname.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Firstname.label}" id="c7">
-                <af:outputText value="#{row.Firstname}" shortDesc="#{bindings.HREmpVO1.hints.Firstname.tooltip}" id="ot7"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Knownas.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Knownas.label}" id="c8">
-                <af:outputText value="#{row.Knownas}" shortDesc="#{bindings.HREmpVO1.hints.Knownas.tooltip}" id="ot8"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Dateofbirth.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Dateofbirth.label}" id="c9">
-                <f:facet name="filter">
-                    <af:inputDate value="#{bindings.HREmpVO1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dateofbirth.value}" id="id1">
+    <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+            <f:facet name="menus"/>
+            <f:facet name="toolbar"/>
+            <f:facet name="statusbar"/>
+            <af:table value="#{bindings.HREmpVO1.collectionModel}" var="row" rows="#{bindings.HREmpVO1.rangeSize}" emptyText="#{bindings.HREmpVO1.viewable ? 'No data to display.' : 'Access Denied.'}" rowBandingInterval="0"
+                      fetchSize="#{bindings.HREmpVO1.rangeSize}" filterModel="#{bindings.HREmpVO1Query.queryDescriptor}" filterVisible="true" queryListener="#{bindings.HREmpVO1Query.processQuery}" varStatus="vs" id="t1">
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.EmpId.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.EmpId.label}" id="c1" styleClass="AFStretchWidth">
+                    <af:outputText value="#{row.EmpId}" shortDesc="#{bindings.HREmpVO1.hints.EmpId.tooltip}" id="ot1">
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.HREmpVO1.hints.EmpId.format}"/>
+                    </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Fullname.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Fullname.label}" id="c2">
+                    <af:outputText value="#{row.Fullname}" shortDesc="#{bindings.HREmpVO1.hints.Fullname.tooltip}" id="ot2"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Persontype.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Persontype.label}" id="c3">
+                    <af:outputText value="#{row.Persontype}" shortDesc="#{bindings.HREmpVO1.hints.Persontype.tooltip}" id="ot3"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Assignmentcategory.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Assignmentcategory.label}" id="c4">
+                    <af:outputText value="#{row.Assignmentcategory}" shortDesc="#{bindings.HREmpVO1.hints.Assignmentcategory.tooltip}" id="ot4"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Title.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Title.label}" id="c5">
+                    <af:outputText value="#{row.Title}" shortDesc="#{bindings.HREmpVO1.hints.Title.tooltip}" id="ot5"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Lastname.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Lastname.label}" id="c6">
+                    <af:outputText value="#{row.Lastname}" shortDesc="#{bindings.HREmpVO1.hints.Lastname.tooltip}" id="ot6"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Firstname.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Firstname.label}" id="c7">
+                    <af:outputText value="#{row.Firstname}" shortDesc="#{bindings.HREmpVO1.hints.Firstname.tooltip}" id="ot7"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Knownas.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Knownas.label}" id="c8">
+                    <af:outputText value="#{row.Knownas}" shortDesc="#{bindings.HREmpVO1.hints.Knownas.tooltip}" id="ot8"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Dateofbirth.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Dateofbirth.label}" id="c9">
+                    <f:facet name="filter">
+                        <af:inputDate value="#{bindings.HREmpVO1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dateofbirth.value}" id="id1">
+                            <af:convertDateTime pattern="#{bindings.HREmpVO1.hints.Dateofbirth.format}"/>
+                        </af:inputDate>
+                    </f:facet>
+                    <af:outputText value="#{row.Dateofbirth}" shortDesc="#{bindings.HREmpVO1.hints.Dateofbirth.tooltip}" id="ot9">
                         <af:convertDateTime pattern="#{bindings.HREmpVO1.hints.Dateofbirth.format}"/>
-                    </af:inputDate>
-                </f:facet>
-                <af:outputText value="#{row.Dateofbirth}" shortDesc="#{bindings.HREmpVO1.hints.Dateofbirth.tooltip}" id="ot9">
-                    <af:convertDateTime pattern="#{bindings.HREmpVO1.hints.Dateofbirth.format}"/>
-                </af:outputText>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Email.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Email.label}" id="c10">
-                <af:outputText value="#{row.Email}" shortDesc="#{bindings.HREmpVO1.hints.Email.tooltip}" id="ot10"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Oldempnumnber.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Oldempnumnber.label}" id="c11">
-                <af:outputText value="#{row.Oldempnumnber}" shortDesc="#{bindings.HREmpVO1.hints.Oldempnumnber.tooltip}" id="ot11"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Nationalidentifier.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Nationalidentifier.label}" id="c12">
-                <af:outputText value="#{row.Nationalidentifier}" shortDesc="#{bindings.HREmpVO1.hints.Nationalidentifier.tooltip}" id="ot12"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Maritalstatus.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Maritalstatus.label}" id="c13">
-                <af:outputText value="#{row.Maritalstatus}" shortDesc="#{bindings.HREmpVO1.hints.Maritalstatus.tooltip}" id="ot13"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Middlenames.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Middlenames.label}" id="c14">
-                <af:outputText value="#{row.Middlenames}" shortDesc="#{bindings.HREmpVO1.hints.Middlenames.tooltip}" id="ot14"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Nationality.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Nationality.label}" id="c15">
-                <af:outputText value="#{row.Nationality}" shortDesc="#{bindings.HREmpVO1.hints.Nationality.tooltip}" id="ot15"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Previouslastname.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Previouslastname.label}" id="c16">
-                <af:outputText value="#{row.Previouslastname}" shortDesc="#{bindings.HREmpVO1.hints.Previouslastname.tooltip}" id="ot16"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Disabledflag.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Disabledflag.label}" id="c17">
-                <af:outputText value="#{row.Disabledflag}" shortDesc="#{bindings.HREmpVO1.hints.Disabledflag.tooltip}" id="ot17"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Gender.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Gender.label}" id="c18">
-                <af:outputText value="#{row.Gender}" shortDesc="#{bindings.HREmpVO1.hints.Gender.tooltip}" id="ot18"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Organisation.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Organisation.label}" id="c19">
-                <af:outputText value="#{row.Organisation}" shortDesc="#{bindings.HREmpVO1.hints.Organisation.tooltip}" id="ot19"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Jobname.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Jobname.label}" id="c20">
-                <af:outputText value="#{row.Jobname}" shortDesc="#{bindings.HREmpVO1.hints.Jobname.tooltip}" id="ot20"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Startdate.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Startdate.label}" id="c21">
-                <f:facet name="filter">
-                    <af:inputDate value="#{bindings.HREmpVO1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Startdate.value}" id="id2">
+                    </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Email.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Email.label}" id="c10">
+                    <af:outputText value="#{row.Email}" shortDesc="#{bindings.HREmpVO1.hints.Email.tooltip}" id="ot10"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Oldempnumnber.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Oldempnumnber.label}" id="c11">
+                    <af:outputText value="#{row.Oldempnumnber}" shortDesc="#{bindings.HREmpVO1.hints.Oldempnumnber.tooltip}" id="ot11"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Nationalidentifier.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Nationalidentifier.label}" id="c12">
+                    <af:outputText value="#{row.Nationalidentifier}" shortDesc="#{bindings.HREmpVO1.hints.Nationalidentifier.tooltip}" id="ot12"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Maritalstatus.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Maritalstatus.label}" id="c13">
+                    <af:outputText value="#{row.Maritalstatus}" shortDesc="#{bindings.HREmpVO1.hints.Maritalstatus.tooltip}" id="ot13"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Middlenames.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Middlenames.label}" id="c14">
+                    <af:outputText value="#{row.Middlenames}" shortDesc="#{bindings.HREmpVO1.hints.Middlenames.tooltip}" id="ot14"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Nationality.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Nationality.label}" id="c15">
+                    <af:outputText value="#{row.Nationality}" shortDesc="#{bindings.HREmpVO1.hints.Nationality.tooltip}" id="ot15"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Previouslastname.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Previouslastname.label}" id="c16">
+                    <af:outputText value="#{row.Previouslastname}" shortDesc="#{bindings.HREmpVO1.hints.Previouslastname.tooltip}" id="ot16"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Disabledflag.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Disabledflag.label}" id="c17">
+                    <af:outputText value="#{row.Disabledflag}" shortDesc="#{bindings.HREmpVO1.hints.Disabledflag.tooltip}" id="ot17"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Gender.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Gender.label}" id="c18">
+                    <af:outputText value="#{row.Gender}" shortDesc="#{bindings.HREmpVO1.hints.Gender.tooltip}" id="ot18"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Organisation.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Organisation.label}" id="c19">
+                    <af:outputText value="#{row.Organisation}" shortDesc="#{bindings.HREmpVO1.hints.Organisation.tooltip}" id="ot19"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Jobname.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Jobname.label}" id="c20">
+                    <af:outputText value="#{row.Jobname}" shortDesc="#{bindings.HREmpVO1.hints.Jobname.tooltip}" id="ot20"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Startdate.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Startdate.label}" id="c21">
+                    <f:facet name="filter">
+                        <af:inputDate value="#{bindings.HREmpVO1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Startdate.value}" id="id2">
+                            <af:convertDateTime pattern="#{bindings.HREmpVO1.hints.Startdate.format}"/>
+                        </af:inputDate>
+                    </f:facet>
+                    <af:outputText value="#{row.Startdate}" shortDesc="#{bindings.HREmpVO1.hints.Startdate.tooltip}" id="ot21">
                         <af:convertDateTime pattern="#{bindings.HREmpVO1.hints.Startdate.format}"/>
-                    </af:inputDate>
-                </f:facet>
-                <af:outputText value="#{row.Startdate}" shortDesc="#{bindings.HREmpVO1.hints.Startdate.tooltip}" id="ot21">
-                    <af:convertDateTime pattern="#{bindings.HREmpVO1.hints.Startdate.format}"/>
-                </af:outputText>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Enddate.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Enddate.label}" id="c22">
-                <f:facet name="filter">
-                    <af:inputDate value="#{bindings.HREmpVO1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Enddate.value}" id="id3">
+                    </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Enddate.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Enddate.label}" id="c22">
+                    <f:facet name="filter">
+                        <af:inputDate value="#{bindings.HREmpVO1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Enddate.value}" id="id3">
+                            <af:convertDateTime pattern="#{bindings.HREmpVO1.hints.Enddate.format}"/>
+                        </af:inputDate>
+                    </f:facet>
+                    <af:outputText value="#{row.Enddate}" shortDesc="#{bindings.HREmpVO1.hints.Enddate.tooltip}" id="ot22">
                         <af:convertDateTime pattern="#{bindings.HREmpVO1.hints.Enddate.format}"/>
-                    </af:inputDate>
-                </f:facet>
-                <af:outputText value="#{row.Enddate}" shortDesc="#{bindings.HREmpVO1.hints.Enddate.tooltip}" id="ot22">
-                    <af:convertDateTime pattern="#{bindings.HREmpVO1.hints.Enddate.format}"/>
-                </af:outputText>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Grade.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Grade.label}" id="c23">
-                <af:outputText value="#{row.Grade}" shortDesc="#{bindings.HREmpVO1.hints.Grade.tooltip}" id="ot23"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Location.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Location.label}" id="c24">
-                <af:outputText value="#{row.Location}" shortDesc="#{bindings.HREmpVO1.hints.Location.tooltip}" id="ot24"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Supervisorempnumber.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Supervisorempnumber.label}" id="c25">
-                <af:outputText value="#{row.Supervisorempnumber}" shortDesc="#{bindings.HREmpVO1.hints.Supervisorempnumber.tooltip}" id="ot25"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Supervisorfullname.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Supervisorfullname.label}" id="c26">
-                <af:outputText value="#{row.Supervisorfullname}" shortDesc="#{bindings.HREmpVO1.hints.Supervisorfullname.tooltip}" id="ot26"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Supervisoroldempnumber.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Supervisoroldempnumber.label}" id="c27">
-                <af:outputText value="#{row.Supervisoroldempnumber}" shortDesc="#{bindings.HREmpVO1.hints.Supervisoroldempnumber.tooltip}" id="ot27"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Supervisornationalidentifier.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Supervisornationalidentifier.label}" id="c28">
-                <af:outputText value="#{row.Supervisornationalidentifier}" shortDesc="#{bindings.HREmpVO1.hints.Supervisornationalidentifier.tooltip}" id="ot28"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Mobile.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Mobile.label}" id="c29">
-                <af:outputText value="#{row.Mobile}" shortDesc="#{bindings.HREmpVO1.hints.Mobile.tooltip}" id="ot29"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Phonenumber.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Phonenumber.label}" id="c30">
-                <af:outputText value="#{row.Phonenumber}" shortDesc="#{bindings.HREmpVO1.hints.Phonenumber.tooltip}" id="ot30"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Division.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Division.label}" id="c31">
-                <af:outputText value="#{row.Division}" shortDesc="#{bindings.HREmpVO1.hints.Division.tooltip}" id="ot31"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Department.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Department.label}" id="c32">
-                <af:outputText value="#{row.Department}" shortDesc="#{bindings.HREmpVO1.hints.Department.tooltip}" id="ot32"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Joblevel.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Joblevel.label}" id="c33">
-                <af:outputText value="#{row.Joblevel}" shortDesc="#{bindings.HREmpVO1.hints.Joblevel.tooltip}" id="ot33"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Position.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Position.label}" id="c34">
-                <af:outputText value="#{row.Position}" shortDesc="#{bindings.HREmpVO1.hints.Position.tooltip}" id="ot34"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Otherattrbiute1.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Otherattrbiute1.label}" id="c35">
-                <af:outputText value="#{row.Otherattrbiute1}" shortDesc="#{bindings.HREmpVO1.hints.Otherattrbiute1.tooltip}" id="ot35"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Otherattrbiute2.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Otherattrbiute2.label}" id="c36">
-                <af:outputText value="#{row.Otherattrbiute2}" shortDesc="#{bindings.HREmpVO1.hints.Otherattrbiute2.tooltip}" id="ot36"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Otherattrbiute3.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Otherattrbiute3.label}" id="c37">
-                <af:outputText value="#{row.Otherattrbiute3}" shortDesc="#{bindings.HREmpVO1.hints.Otherattrbiute3.tooltip}" id="ot37"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Otherattrbiute4.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Otherattrbiute4.label}" id="c38">
-                <af:outputText value="#{row.Otherattrbiute4}" shortDesc="#{bindings.HREmpVO1.hints.Otherattrbiute4.tooltip}" id="ot38"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Otherattrbiute5.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Otherattrbiute5.label}" id="c39">
-                <af:outputText value="#{row.Otherattrbiute5}" shortDesc="#{bindings.HREmpVO1.hints.Otherattrbiute5.tooltip}" id="ot39"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Hcmnumber.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Hcmnumber.label}" id="c40">
-                <af:outputText value="#{row.Hcmnumber}" shortDesc="#{bindings.HREmpVO1.hints.Hcmnumber.tooltip}" id="ot40"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Employeenumber.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Employeenumber.label}" id="c41">
-                <af:outputText value="#{row.Employeenumber}" shortDesc="#{bindings.HREmpVO1.hints.Employeenumber.tooltip}" id="ot41"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Lastupdated.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Lastupdated.label}" id="c42">
-                <f:facet name="filter">
-                    <af:inputDate value="#{bindings.HREmpVO1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Lastupdated.value}" id="id4">
+                    </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Grade.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Grade.label}" id="c23">
+                    <af:outputText value="#{row.Grade}" shortDesc="#{bindings.HREmpVO1.hints.Grade.tooltip}" id="ot23"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Location.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Location.label}" id="c24">
+                    <af:outputText value="#{row.Location}" shortDesc="#{bindings.HREmpVO1.hints.Location.tooltip}" id="ot24"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Supervisorempnumber.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Supervisorempnumber.label}" id="c25">
+                    <af:outputText value="#{row.Supervisorempnumber}" shortDesc="#{bindings.HREmpVO1.hints.Supervisorempnumber.tooltip}" id="ot25"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Supervisorfullname.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Supervisorfullname.label}" id="c26">
+                    <af:outputText value="#{row.Supervisorfullname}" shortDesc="#{bindings.HREmpVO1.hints.Supervisorfullname.tooltip}" id="ot26"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Supervisoroldempnumber.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Supervisoroldempnumber.label}" id="c27">
+                    <af:outputText value="#{row.Supervisoroldempnumber}" shortDesc="#{bindings.HREmpVO1.hints.Supervisoroldempnumber.tooltip}" id="ot27"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Supervisornationalidentifier.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Supervisornationalidentifier.label}" id="c28">
+                    <af:outputText value="#{row.Supervisornationalidentifier}" shortDesc="#{bindings.HREmpVO1.hints.Supervisornationalidentifier.tooltip}" id="ot28"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Mobile.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Mobile.label}" id="c29">
+                    <af:outputText value="#{row.Mobile}" shortDesc="#{bindings.HREmpVO1.hints.Mobile.tooltip}" id="ot29"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Phonenumber.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Phonenumber.label}" id="c30">
+                    <af:outputText value="#{row.Phonenumber}" shortDesc="#{bindings.HREmpVO1.hints.Phonenumber.tooltip}" id="ot30"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Division.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Division.label}" id="c31">
+                    <af:outputText value="#{row.Division}" shortDesc="#{bindings.HREmpVO1.hints.Division.tooltip}" id="ot31"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Department.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Department.label}" id="c32">
+                    <af:outputText value="#{row.Department}" shortDesc="#{bindings.HREmpVO1.hints.Department.tooltip}" id="ot32"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Joblevel.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Joblevel.label}" id="c33">
+                    <af:outputText value="#{row.Joblevel}" shortDesc="#{bindings.HREmpVO1.hints.Joblevel.tooltip}" id="ot33"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Position.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Position.label}" id="c34">
+                    <af:outputText value="#{row.Position}" shortDesc="#{bindings.HREmpVO1.hints.Position.tooltip}" id="ot34"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Otherattrbiute1.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Otherattrbiute1.label}" id="c35">
+                    <af:outputText value="#{row.Otherattrbiute1}" shortDesc="#{bindings.HREmpVO1.hints.Otherattrbiute1.tooltip}" id="ot35"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Otherattrbiute2.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Otherattrbiute2.label}" id="c36">
+                    <af:outputText value="#{row.Otherattrbiute2}" shortDesc="#{bindings.HREmpVO1.hints.Otherattrbiute2.tooltip}" id="ot36"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Otherattrbiute3.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Otherattrbiute3.label}" id="c37">
+                    <af:outputText value="#{row.Otherattrbiute3}" shortDesc="#{bindings.HREmpVO1.hints.Otherattrbiute3.tooltip}" id="ot37"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Otherattrbiute4.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Otherattrbiute4.label}" id="c38">
+                    <af:outputText value="#{row.Otherattrbiute4}" shortDesc="#{bindings.HREmpVO1.hints.Otherattrbiute4.tooltip}" id="ot38"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Otherattrbiute5.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Otherattrbiute5.label}" id="c39">
+                    <af:outputText value="#{row.Otherattrbiute5}" shortDesc="#{bindings.HREmpVO1.hints.Otherattrbiute5.tooltip}" id="ot39"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Hcmnumber.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Hcmnumber.label}" id="c40">
+                    <af:outputText value="#{row.Hcmnumber}" shortDesc="#{bindings.HREmpVO1.hints.Hcmnumber.tooltip}" id="ot40"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Employeenumber.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Employeenumber.label}" id="c41">
+                    <af:outputText value="#{row.Employeenumber}" shortDesc="#{bindings.HREmpVO1.hints.Employeenumber.tooltip}" id="ot41"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Lastupdated.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Lastupdated.label}" id="c42">
+                    <f:facet name="filter">
+                        <af:inputDate value="#{bindings.HREmpVO1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Lastupdated.value}" id="id4">
+                            <af:convertDateTime pattern="#{bindings.HREmpVO1.hints.Lastupdated.format}"/>
+                        </af:inputDate>
+                    </f:facet>
+                    <af:outputText value="#{row.Lastupdated}" shortDesc="#{bindings.HREmpVO1.hints.Lastupdated.tooltip}" id="ot42">
                         <af:convertDateTime pattern="#{bindings.HREmpVO1.hints.Lastupdated.format}"/>
-                    </af:inputDate>
-                </f:facet>
-                <af:outputText value="#{row.Lastupdated}" shortDesc="#{bindings.HREmpVO1.hints.Lastupdated.tooltip}" id="ot42">
-                    <af:convertDateTime pattern="#{bindings.HREmpVO1.hints.Lastupdated.format}"/>
-                </af:outputText>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Manager.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Manager.label}" id="c43">
-                <af:outputText value="#{row.Manager}" shortDesc="#{bindings.HREmpVO1.hints.Manager.tooltip}" id="ot43"/>
-            </af:column>
-            <af:column sortProperty="#{bindings.HREmpVO1.hints.Batchid.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Batchid.label}" id="c44">
-                <af:outputText value="#{row.Batchid}" shortDesc="#{bindings.HREmpVO1.hints.Batchid.tooltip}" id="ot44"/>
-            </af:column>
-        </af:table>
-    </af:panelGroupLayout>
+                    </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Manager.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Manager.label}" id="c43">
+                    <af:outputText value="#{row.Manager}" shortDesc="#{bindings.HREmpVO1.hints.Manager.tooltip}" id="ot43"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.Batchid.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.Batchid.label}" id="c44">
+                    <af:outputText value="#{row.Batchid}" shortDesc="#{bindings.HREmpVO1.hints.Batchid.tooltip}" id="ot44"/>
+                </af:column>
+            </af:table>
+        </af:panelCollection>
+      
 </jsp:root>

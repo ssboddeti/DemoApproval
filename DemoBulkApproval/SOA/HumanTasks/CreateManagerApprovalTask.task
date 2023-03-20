@@ -64,7 +64,7 @@
       </outcomes>
       <payload externalSchema="false" xmlSchemaDefinition="../Schemas/CreateManagerApprovalTaskPayload.xsd" typedTaskSchemaLocation="../Schemas/CreateManagerApprovalTaskWorkflowTask.xsd">
          <messageAttribute name="BatchID" attributeType="SIMPLE_TYPE" type="xsd:string" updatable="true" external="false"/>
-         <messageAttribute name="userLogin" attributeType="SIMPLE_TYPE" type="xsd:string" updatable="false" external="false"/>
+         <messageAttribute name="userLogin" attributeType="SIMPLE_TYPE" type="xsd:string" updatable="true" external="false"/>
       </payload>
       <bpelEventListener>false</bpelEventListener>
       <bpelNoCallbacks>false</bpelNoCallbacks>

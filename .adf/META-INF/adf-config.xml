@@ -8,9 +8,6 @@
   <sec:adf-security-child xmlns="http://xmlns.oracle.com/adf/security/config">
     <CredentialStoreContext credentialStoreClass="oracle.adf.share.security.providers.jps.CSFCredentialStore"
                             credentialStoreLocation="../../src/META-INF/jps-config.xml"/>
-    <sec:JaasSecurityContext initialContextFactoryClass="oracle.adf.share.security.JAASInitialContextFactory"
-                             jaasProviderClass="oracle.adf.share.security.providers.jps.JpsSecurityContext"
-                             authorizationEnforce="false" authenticationRequire="true"/>
   </sec:adf-security-child>
   <adf-mds-config xmlns="http://xmlns.oracle.com/adf/mds/config">
     <mds-config xmlns="http://xmlns.oracle.com/mds/config">

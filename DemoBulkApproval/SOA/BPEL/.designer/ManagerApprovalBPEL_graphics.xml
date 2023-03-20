@@ -4,11 +4,11 @@
    <annotationfile/>
    <iconize/>
    <partnerlink_locations>
-      <partnerlink name="managerapprovalbpel_client" x="0" y="358" side="left"/>
-      <partnerlink name="CreateManagerApprovalTask.TaskService_1" x="2170" y="376" side="right"/>
-      <partnerlink name="updateHR_EMP" x="2170" y="18" side="right"/>
+      <partnerlink name="managerapprovalbpel_client" x="0" y="538" side="left"/>
+      <partnerlink name="CreateManagerApprovalTask.TaskService_1" x="2278" y="376" side="right"/>
+      <partnerlink name="updateHR_EMP" x="2278" y="816" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,0,2402,818" show_swimlanes="true">
+   <graph_layout viewport="0,0,2510,818" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/sequence/scope" type="human task" showhandlers="true"/>

@@ -246,7 +246,7 @@
                             </af:showDetailHeader>
                             <af:showDetailHeader size="2" id="apCntHd" text="#{adfbatchapprovaltaskflowBundle.BATCH_USER_INFORMATION}" disclosed="true">
                                 <af:panelGroupLayout id="plPnl76" layout="vertical" shortDesc="#{resources.CONTENTS}">
-                                    <af:panelFormLayout id="pfl6">
+                                    <af:panelFormLayout id="pfl6" styleClass="AFStretchWidth">
                                         <af:region value="#{bindings.HrEmpTaskFlow1.regionModel}" id="r1"/>
                                     </af:panelFormLayout>
                                 </af:panelGroupLayout>
