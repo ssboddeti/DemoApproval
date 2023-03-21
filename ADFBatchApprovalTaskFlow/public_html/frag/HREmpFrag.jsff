@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:f="http://java.sun.com/jsf/core">
-    <af:panelCollection id="pc1" styleClass="AFStretchWidth">
-            <f:facet name="menus"/>
-            <f:facet name="toolbar"/>
-            <f:facet name="statusbar"/>
+    <af:panelBox text="Employee Batch" id="pb1" showDisclosure="false" styleClass="AFStretchWidth">
+        <f:facet name="toolbar"/>
+        <af:panelGroupLayout id="pgl1" layout="horizontal" styleClass="AFStretchWidth">
             <af:table value="#{bindings.HREmpVO1.collectionModel}" var="row" rows="#{bindings.HREmpVO1.rangeSize}" emptyText="#{bindings.HREmpVO1.viewable ? 'No data to display.' : 'Access Denied.'}" rowBandingInterval="0"
-                      fetchSize="#{bindings.HREmpVO1.rangeSize}" filterModel="#{bindings.HREmpVO1Query.queryDescriptor}" filterVisible="true" queryListener="#{bindings.HREmpVO1Query.processQuery}" varStatus="vs" id="t1">
-                <af:column sortProperty="#{bindings.HREmpVO1.hints.EmpId.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.EmpId.label}" id="c1" styleClass="AFStretchWidth">
+                      fetchSize="#{bindings.HREmpVO1.rangeSize}" filterModel="#{bindings.HREmpVO1Query.queryDescriptor}" filterVisible="true" queryListener="#{bindings.HREmpVO1Query.processQuery}" varStatus="vs" id="t1" 
+                      columnStretching="last">
+                <af:column sortProperty="#{bindings.HREmpVO1.hints.EmpId.name}" filterable="true" sortable="true" headerText="#{bindings.HREmpVO1.hints.EmpId.label}" id="c1">
                     <af:outputText value="#{row.EmpId}" shortDesc="#{bindings.HREmpVO1.hints.EmpId.tooltip}" id="ot1">
                         <af:convertNumber groupingUsed="false" pattern="#{bindings.HREmpVO1.hints.EmpId.format}"/>
                     </af:outputText>
@@ -169,6 +169,7 @@
                     <af:outputText value="#{row.Batchid}" shortDesc="#{bindings.HREmpVO1.hints.Batchid.tooltip}" id="ot44"/>
                 </af:column>
             </af:table>
-        </af:panelCollection>
+        </af:panelGroupLayout>
+    </af:panelBox>
       
 </jsp:root>
