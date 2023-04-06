@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:f="http://java.sun.com/jsf/core">
-    <af:panelBox text="Employee Batch" id="pb1" showDisclosure="false" styleClass="AFStretchWidth">
+    <af:panelBox text="Employee Batch" id="pb1" showDisclosure="false" inlineStyle="width:1200px;">
         <f:facet name="toolbar"/>
         <af:panelGroupLayout id="pgl1" layout="horizontal" styleClass="AFStretchWidth">
             <af:table value="#{bindings.HREmpVO1.collectionModel}" var="row" rows="#{bindings.HREmpVO1.rangeSize}" emptyText="#{bindings.HREmpVO1.viewable ? 'No data to display.' : 'Access Denied.'}" rowBandingInterval="0"

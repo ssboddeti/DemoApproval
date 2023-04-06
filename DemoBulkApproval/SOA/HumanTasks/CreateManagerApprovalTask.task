@@ -39,7 +39,7 @@
             </participant>
          </stage>
       </participants>
-      <notification includeTaskAttachments="false" actionable="false" secureNotifications="false" oneNotificationPerUserPerAction="false" hideWorklistUrlInEmail="false" hideWarnings="false">
+      <notification includeTaskAttachments="false" actionable="false" secureNotifications="false" oneNotificationPerUserPerAction="false" hideWorklistUrlInEmail="true" hideWarnings="true">
          <action name="ASSIGN" recipient="ASSIGNEES">
             <![CDATA[concat(string('Task '), /task:task/task:title, string(' requires your attention.'))]]>
          </action>
