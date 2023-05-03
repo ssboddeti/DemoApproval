@@ -23,7 +23,6 @@
             var cid = element.getClientId();
              //call bean method validateServerListener
             AdfCustomEvent.queue(element, "validateServerListener", { fcid : cid, fvalue : val }, false);
-            event.cancel();
             }
             </af:resource>
             <af:form id="f1" usesUpload="true">
@@ -37,36 +36,36 @@
                                 <af:switcher id="customActionButtons" facetName="#{actionAvailable.isCustomActionButtons}">
                                     <f:facet name="true">
                                         <af:panelGroupLayout layout="horizontal" id="pgl7">
-                                            <af:button actionListener="#{invokeActionBean.setOperation}"
+                                            <af:button actionListener="#{pageFlowScope.customBean.setOperationOverride}"
                                                        text="#{wf:getResourceValue('APPROVE', 'bindings.customActions')}"
-                                                       disabled="#{!bindings.APPROVE.enabled}" action="#{invokeActionBean.invokeOperation}"
+                                                       disabled="#{!bindings.APPROVE.enabled}"  action="#{pageFlowScope.customBean.invokeActionWithMessage}"
                                                        partialSubmit="false" visible="#{wf:isCustomActionAvailable('APPROVE', 'bindings.customActions')}"
                                                        id="b2">
                                                 <f:attribute name="DC_OPERATION_BINDING" value="bindings.APPROVE"/>
-                                                <af:clientListener method="messagePopApprove" type="action"/>
-                                                <af:serverListener type="validateServerListener" method="#{pageFlowScope.customBean.validateServerListener}"/>
+                                                <!--<af:clientListener method="messagePopApprove" type="action"/>
+                                                <af:serverListener type="validateServerListener" method="#{pageFlowScope.customBean.validateServerListener}"/>-->
                                             </af:button>
-                                            <af:button actionListener="#{invokeActionBean.setOperation}"
+                                            <af:button actionListener="#{pageFlowScope.customBean.setOperationOverride}"
                                                        text="#{wf:getResourceValue('REJECT', 'bindings.customActions')}" disabled="#{!bindings.REJECT.enabled}"
-                                                       action="#{invokeActionBean.invokeOperation}" partialSubmit="false"
+                                                        action="#{pageFlowScope.customBean.invokeActionWithMessage}" partialSubmit="false"
                                                        visible="#{wf:isCustomActionAvailable('REJECT', 'bindings.customActions')}" id="b1">
                                                 <f:attribute name="DC_OPERATION_BINDING" value="bindings.REJECT"/>
-                                                  <af:clientListener method="messagePopReject" type="action"/>
-                                                <af:serverListener type="validateServerListener" method="#{pageFlowScope.customBean.validateServerListener}"/>
+                                                  <!--<af:clientListener method="messagePopReject" type="action"/>
+                                                <af:serverListener type="validateServerListener" method="#{pageFlowScope.customBean.validateServerListener}"/>-->
                                             </af:button>
                                         </af:panelGroupLayout>
                                     </f:facet>
                                 </af:switcher>
-                                <af:button actionListener="#{invokeActionBean.setOperation}" text="#{resources.CLAIM}" id="Claim"
-                                           action="#{invokeActionBean.invokeOperation}" partialSubmit="false" visible="#{actionAvailable.claimAvailable}">
+                                <af:button actionListener="#{pageFlowScope.customBean.setOperationOverride}" text="#{resources.CLAIM}" id="Claim"
+                                           action="#{pageFlowScope.customBean.invokeActionWithMessage}" partialSubmit="false" visible="#{actionAvailable.claimAvailable}">
                                     <f:attribute name="DC_OPERATION_BINDING" value="bindings.Claim"/>
                                 </af:button>
-                                <af:button id="acknowledge" actionListener="#{invokeActionBean.setOperation}" text="#{resources.ACKNOWLEDGE}"
-                                           action="#{invokeActionBean.invokeOperation}" partialSubmit="false" visible="#{actionAvailable.isFyiTask}">
+                                <af:button id="acknowledge" actionListener="#{pageFlowScope.customBean.setOperationOverride}" text="#{resources.ACKNOWLEDGE}"
+                                           action="#{pageFlowScope.customBean.invokeActionWithMessage}" partialSubmit="false" visible="#{actionAvailable.isFyiTask}">
                                     <f:attribute name="DC_OPERATION_BINDING" value="bindings.Acknowledge"/>
                                 </af:button>
-                                <af:button id="resume" actionListener="#{invokeActionBean.setOperation}" text="#{resources.RESUME}"
-                                           action="#{invokeActionBean.invokeOperation}" partialSubmit="false" visible="#{actionAvailable.resumeAvailable}">
+                                <af:button id="resume" actionListener="#{pageFlowScope.customBean.setOperationOverride}" text="#{resources.RESUME}"
+                                           action="#{pageFlowScope.customBean.invokeActionWithMessage}" partialSubmit="false" visible="#{actionAvailable.resumeAvailable}">
                                     <f:attribute name="DC_OPERATION_BINDING" value="bindings.Resume"/>
                                 </af:button>
                                 <af:panelGroupLayout layout="horizontal" id="pgl11">
