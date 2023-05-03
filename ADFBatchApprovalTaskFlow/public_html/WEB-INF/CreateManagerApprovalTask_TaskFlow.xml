@@ -233,6 +233,11 @@
       <managed-bean-class>oracle.bpel.services.workflow.worklist.adf.CommentBean</managed-bean-class>
       <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    <managed-bean id="__57">
+      <managed-bean-name>customBean</managed-bean-name>
+      <managed-bean-class>adfbatchapprovaltaskflow.customBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
     <finalizer>#{invokeActionBean.invokeScript}</finalizer>
     <view id="CreateManagerApprovalTask_TaskDetails_jspx">
       <page>/CreateManagerApprovalTask_TaskDetails.jspx</page>
