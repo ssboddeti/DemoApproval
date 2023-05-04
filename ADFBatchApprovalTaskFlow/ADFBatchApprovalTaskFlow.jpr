@@ -452,6 +452,10 @@
             <value n="id" v="BC4J Oracle Domains"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <value n="id" v="JAX-RS Jersey Jackson (Bundled)"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
       <hash n="internalDefinitions">
          <list n="libraryDefinitions">
@@ -625,6 +629,10 @@
             <value n="id" v="BC4J Oracle Domains"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <value n="id" v="JAX-RS Jersey Jackson (Bundled)"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectPaths">
@@ -733,16 +741,6 @@
             <value n="version" v="11"/>
          </hash>
          <hash>
-            <value n="libraries" v="ADF Faces Components"/>
-            <value n="name" v="worklistComponents"/>
-            <value n="prefix" v="wlc"/>
-            <value n="runInEditor" v="true"/>
-            <value n="showInPalette" v="true"/>
-            <value n="taglibURL" v="@project@../../../../../AppData/Local/FMW/soa/soa/modules/oracle.soa.worklist_11.1.1/adflibWorklistComponents.jar!/META-INF/worklistcomponents.taglib.xml"/>
-            <value n="URI" v="http://xmlns.oracle.com/bpel/workflow/worklist"/>
-            <value n="version" v="2.0"/>
-         </hash>
-         <hash>
             <hash n="baseLibrary">
                <value n="name" v="Workflow Tags"/>
                <value n="version" v="1.0"/>
@@ -751,6 +749,16 @@
             <value n="taglibURL" v="@oracle.home@../soa/plugins/jdeveloper/integration/lib/bpm-workflow-datacontrol.jar!/META-INF/workflow.taglib.xml"/>
             <value n="URI" v="http://xmlns.oracle.com/bpel/workflow/workflow-taglib.tld"/>
             <value n="version" v="1.0"/>
+         </hash>
+         <hash>
+            <hash n="baseLibrary">
+               <value n="name" v="ADF Data Visualization"/>
+               <value n="version" v="1.1"/>
+            </hash>
+            <value n="name" v="ADF Data Visualization"/>
+            <value n="taglibURL" v="@oracle.home@../oracle_common/modules/oracle.adf.view/dvt-faces.jar!/META-INF/bi.taglib.xml"/>
+            <value n="URI" v="http://xmlns.oracle.com/dss/adf/faces"/>
+            <value n="version" v="1.1"/>
          </hash>
       </list>
    </hash>

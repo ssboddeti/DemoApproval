@@ -1,7 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<MetadataDirectory xmlns="http://xmlns.oracle.com/adfm/metainf" version="11.1.1.0.0">
-   <BusinessComponentProjectRegistry path="ng/com/mtn/oim/ADFBatchApprovalModel.jpx"/>
-   <BusinessComponentServiceRegistry path="ng/com/mtn/oim/common/bc4j.xcfg"/>
-   <DataBindingRegistry path="adfbatchapprovaltaskflow/DataBindings.cpx"/>
-   <DataControlRegistry path="adfbatchapprovaltaskflow/DataControls.dcx"/>
-</MetadataDirectory>

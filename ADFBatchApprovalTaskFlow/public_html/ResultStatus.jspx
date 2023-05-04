@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="ResultStatus" id="d1">
+            <af:form id="f1">
+                <af:panelGroupLayout id="pgl1" layout="horizontal">
+                    <af:icon name="info" id="i1"/>
+                    <af:outputText value="Your action has been caried out successfully..." id="ot2"/>
+                    <af:button text="click here to close the page" id="b1" action="close"/>
+                </af:panelGroupLayout>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

@@ -12,13 +12,20 @@ import org.apache.myfaces.trinidad.util.Service;
 
 import javax.faces.context.FacesContext;
 
+import oracle.adf.model.BindingContext;
+import oracle.adf.model.binding.DCBindingContainer;
+import oracle.adf.model.events.EventProducer;
+import oracle.adf.view.rich.context.AdfFacesContext;
+
 import oracle.bpel.services.workflow.worklist.adf.InvokeActionBean;
 
-import org.apache.myfaces.trinidad.render.ExtendedRenderKitService;
+import oracle.jbo.uicli.binding.JUEventBinding;
 
+ 
 public class customBean extends InvokeActionBean {
     private static ADFLogger logger = ADFLogger.createADFLogger(customBean.class);
     private String operationBinding;
+    private String result;
 
     public customBean() {
         System.out.println("customBean is created");
@@ -58,12 +65,8 @@ public class customBean extends InvokeActionBean {
     }
 
     public String invokeActionWithMessage() {
-//        FacesContext facesContext = FacesContext.getCurrentInstance();
-//        FacesMessage msg =
-//            new FacesMessage(FacesMessage.SEVERITY_INFO, "The request has been carried out",
-//                             "The request has been " + operationBinding + " you can close the tab");
-//        facesContext.addMessage(null, msg);
-        return invokeOperation();
+        System.out.println(result);
+        return "goToResultPage";
     }
 
 
@@ -82,11 +85,20 @@ public class customBean extends InvokeActionBean {
         System.out.println("operationBinding " + operationBinding);
         setOperation(actionEvent);
         System.out.println("invokeActionWithMessage " + operationBinding);
-        FacesContext facesContext = FacesContext.getCurrentInstance();
-        FacesMessage msg =
-            new FacesMessage(FacesMessage.SEVERITY_INFO, "The request has been carried out",
-                             "The request has been " + operationBinding + " you can close the tab");
-        facesContext.addMessage(null, msg);
-        facesContext.renderResponse();
+        //
+//        JSFUtils.addFacesErrorMessage("The request has been carried out", "The request has been " + operationBinding + " you can close the tab");
+        result =invokeOperation();
+        System.out.println("setOperationOverride result: "+ result);
+        //raiseEvent("raiseTaskFlowFeedbackEvent", "The request has been " + operationBinding + " you can close the tab");
+
     }
+
+    public static final void raiseEvent(String eventBindingId, Object payload) {
+        DCBindingContainer bc = (DCBindingContainer) BindingContext.getCurrent().getCurrentBindingsEntry();
+        JUEventBinding actionBnd = (JUEventBinding) bc.findCtrlBinding(eventBindingId);
+        bc.getEventDispatcher().queueEvent((EventProducer) actionBnd, payload);
+        bc.getEventDispatcher().processContextualEvents();
+    }
+
+
 }

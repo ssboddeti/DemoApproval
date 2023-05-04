@@ -267,13 +267,9 @@
         <name>new</name>
       </outcome>
     </task-flow-return>
-    <control-flow-rule id="__29">
-      <from-activity-id>*</from-activity-id>
-      <control-flow-case id="__30">
-        <from-outcome>closeTaskFlow</from-outcome>
-        <to-activity-id>taskReturn</to-activity-id>
-      </control-flow-case>
-    </control-flow-rule>
+    <view id="view1">
+      <page>/ResultStatus.jspx</page>
+    </view>
     <control-flow-rule id="__31">
       <from-activity-id>*</from-activity-id>
       <control-flow-case id="__32">
@@ -283,16 +279,24 @@
     </control-flow-rule>
     <control-flow-rule id="__33">
       <from-activity-id>*</from-activity-id>
-      <control-flow-case id="__34">
-        <from-outcome>fetchPreviousTask</from-outcome>
-        <to-activity-id>previousTaskFlow</to-activity-id>
+      <control-flow-case id="__58">
+        <from-outcome>closeTaskFlow</from-outcome>
+        <to-activity-id>view1</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__35">
       <from-activity-id>*</from-activity-id>
-      <control-flow-case id="__36">
+      <control-flow-case id="__65">
+        <from-outcome>fetchPreviousTask</from-outcome>
+        <to-activity-id>view1</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__66">
         <from-outcome>fetchNextTask</from-outcome>
-        <to-activity-id>nextTaskFlow</to-activity-id>
+        <to-activity-id>view1</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__67">
+        <from-outcome>goToResultPage</from-outcome>
+        <to-activity-id>view1</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__37">
@@ -300,6 +304,13 @@
       <control-flow-case id="__38">
         <from-outcome>fetchNewTask</from-outcome>
         <to-activity-id>taskFlowCompleted</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__61">
+      <from-activity-id>view1</from-activity-id>
+      <control-flow-case id="__62">
+        <from-outcome>close</from-outcome>
+        <to-activity-id>taskReturn</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>

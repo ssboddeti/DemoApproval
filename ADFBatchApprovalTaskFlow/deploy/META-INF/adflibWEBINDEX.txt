@@ -1,5 +1,0 @@
-CreateManagerApprovalTask_TaskDetails.jspx
-CreateManagerApprovalTask_TaskNotification.jspx
-error.html
-index.html
-login.jsp
